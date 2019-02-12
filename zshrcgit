@@ -113,16 +113,13 @@ else
 	export PYTHONPATH="/Users/Zack/Git/openncem:/Users/Zack/Git/OtherLibs:/Users/Zack/Git/pySTXM:/Users/Zack/Git/ALCHEMIViewer:/Users/Zack/Git/phonopy-1.10.8/lib/python"
 fi;
 
-export PATH="/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:/Users/Zack/Git/OtherLibs:/Users/Zack/git/phonopy-1.10.8/scripts:/Applications/MacVim.app/Contents/bin:/Users/Zack/anaconda3/bin:/Users/Zack/Git/QEDev/bin:/Users/Zack/Git/QEDev/PW/tools:/Users/Zack/Dropbox/DFT/bin:$PATH"
-
-# Enable latest conda environment
-source activate conda37
+export PATH="/Users/Zack/anaconda3/bin:/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:/Users/Zack/Git/OtherLibs:/Users/Zack/git/phonopy-1.10.8/scripts:/Applications/MacVim.app/Contents/bin:/Users/Zack/Git/QEDev/bin:/Users/Zack/Git/QEDev/PW/tools:/Users/Zack/Dropbox/DFT/bin:$PATH"
 
 # Ciao alias
-alias ciao="source /Users/Zack/ciao-4.9/bin/ciao.bash"
+alias ciao="source /Users/Zack/ciao-4.11/bin/ciao.bash"
 
 # A much nicer git tree
-alias tree="git log --graph --decorate --pretty=format:'%C(yellow)%h %Cred%cr %Cblue(%an)%C(cyan)%d%Creset %s' --abbrev-commit --all"
+alias gt="git log --graph --decorate --pretty=format:'%C(yellow)%h %Cred%cr %Cblue(%an)%C(cyan)%d%Creset %s' --abbrev-commit --all"
 
 # Use nice vim.
 if [ -e /Applications/MacVim.app/Contents/MacOS/Vim ]; then
@@ -143,8 +140,30 @@ bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 bindkey "^[[3~" delete-char
 bindkey -a "^[[3~" delete-char
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
 
 # Start at home.
 # cd ~
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/Zack/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/Zack/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/Zack/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/Zack/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# Enable latest conda environment
+conda deactivate
+conda activate conda37
+

@@ -51,14 +51,16 @@ set guifont=Menlo\ Regular:h16
 imap jk <ESC>
 imap kj <ESC>
 
-" Make Q = q, I always mistype this.  ;-)
+" Fix common typos I make... ;-)
 cmap Q q
+cmap W w
 
 "Enable mouse.
 set mouse=a
 
 " Make system clipboard accessible
 set clipboard=unnamed
+
 " Make paste not nuke the clipboard.
 xnoremap p pgvy
 
@@ -98,3 +100,7 @@ nnoremap <ForceClick> i
 " let g:NERDTreeDirArrowExpandable="+"
 " let g:NERDTreeDirArrowCollapsible="~"
 let g:NERDTreeNodeDelimiter = "\u00a0" 
+
+" Set path
+set path+=**
+set wildmenu
