@@ -15,6 +15,7 @@ Plugin 'wincent/terminus'
 Plugin 'chrisbra/csv.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdtree'
 Plugin 'will133/vim-dirdiff'
 
@@ -32,6 +33,9 @@ filetype plugin indent on    " required
 
 " Have vimtex use the skim editor.
 let g:vimtex_view_method = 'skim'
+" The underlying tex syntax engine is slow.  Turn it mostly off except for brackets.
+let g:tex_fast="m"
+let g:tex_conceal=""
 
 " For YCM
 " Make preview windows open at bottom.
