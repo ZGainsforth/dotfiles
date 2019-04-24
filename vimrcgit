@@ -48,6 +48,10 @@ nnoremap <Leader>t :YcmCompleter GetType <CR>
 nnoremap <Leader>s :w<CR>
 inoremap <Leader>s <C-o>:w<CR>
 
+" Run python scripts with a quick \r.
+autocmd Filetype python nmap <leader>r <Esc>:w<CR>:!clear;python %<CR>
+autocmd Filetype python imap <leader>r <Esc>:w<CR>:!clear;python %<CR>
+
 " MacVim should use a larger font.
 set guifont=Menlo\ Regular:h16
 
