@@ -84,6 +84,7 @@ colorscheme desert
 if &diff
     colorscheme morning
 endif
+hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
 " Tabs
 filetype plugin indent on
