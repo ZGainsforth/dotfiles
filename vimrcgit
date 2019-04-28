@@ -83,6 +83,12 @@ set clipboard=unnamed
 " Make paste not nuke the clipboard.
 xnoremap p pgvy
 
+" Make a way to insert/delete blank lines above and below.
+nmap gK jddk
+nmap gJ kdd
+nmap gk O<esc>j
+nmap gj o<esc>j
+
 " Pretty colors and screen functionalities please!
 syntax on
 set background=dark

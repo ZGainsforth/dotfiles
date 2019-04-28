@@ -143,6 +143,9 @@ bindkey -a "^[[3~" delete-char
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 
+# Make less scroll
+export LESS=-r
+
 # Start at home.
 # cd ~
 
