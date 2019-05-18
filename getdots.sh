@@ -1,9 +1,15 @@
 #!/bin/bash
 
-# For my macs.
-VIMCOMMAND='mvimdiff -f'
-# For unix.
-# VIMCOMMAND=vimdiff
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo 'Detected OS X'
+    VIMCOMMAND='mvimdiff -f'
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo 'Detected Linux'
+    VIMCOMMAND=vimdiff
+else
+    echo 'OS not detected assuming Linux'
+    VIMCOMMAND=vimdiff
+fi
 
 cd ~
 
@@ -23,6 +29,7 @@ git pull
 echo "${GREEN}Backing up existing dots as ~/getdots/*local${NC}"
 cp ../.vimrc ./vimrclocal
 cp ../.zshrc ./zshrclocal
+cp ../.tmux.conf ./tmux.conflocal
 
 # Now do diffs and confirm overwrite on each.
 echo "--------------------  < .vimrc (git), > .vimrc (local) --------------------"
@@ -42,6 +49,16 @@ read yn
 if [ $yn == "y" ]; then
     echo "${GREEN}Copying...${NC}"
     cp zshrcgit ../.zshrc
+fi
+
+# Now do diffs and confirm overwrite on each.
+echo "--------------------  < .tmux.conf (git), > .tmux.conf (local) --------------------"
+$VIMCOMMAND tmux.confgit tmux.conflocal
+echo "${GREEN}Overwrite your existing .tmux.conf with the edited git one (y/[n]?)${NC}"
+read yn
+if [ $yn == "y" ]; then
+    echo "${GREEN}Copying...${NC}"
+    cp tmux.confgit ../.tmux.conf
 fi
 
 echo 'Done.  To update the git version, simply overwrite the vimrcgit (or [whatever]git) with the new version and git push.'

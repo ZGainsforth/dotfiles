@@ -1,0 +1,12 @@
+#.tmux.conf
+
+# Version < 2.1
+# Make mouse useful in copy mode
+# set -g mode-mouse on
+# set -g mouse-select-window on
+# set -g mouse-select-pane on
+# set -g mouse-resize-pane on
+
+# Version > 2.1
+# Make mouse useful in copy mode
+set -g mouse on
