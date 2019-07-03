@@ -1,7 +1,7 @@
 export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/Zack/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -108,15 +108,15 @@ export DEFAULT_USER="$(whoami)"
 
 # Add python directories to the python path.
 if [[ -n $PYTHONPATH ]]; then
-	export PYTHONPATH="${PYTHON_PATH}:/Users/Zack/Git/openncem:/Users/Zack/Git/OtherLibs:/Users/Zack/Git/pySTXM:/Users/Zack/Git/ALCHEMIViewer:/Users/Zack/Git/phonopy-1.10.8/lib/python"
+	export PYTHONPATH="${PYTHON_PATH}:$HOME/Git/openncem:$HOME/Git/OtherLibs:$HOME/Git/pySTXM:$HOME/Git/ALCHEMIViewer:$HOME/Git/phonopy-1.10.8/lib/python"
 else
-	export PYTHONPATH="/Users/Zack/Git/openncem:/Users/Zack/Git/OtherLibs:/Users/Zack/Git/pySTXM:/Users/Zack/Git/ALCHEMIViewer:/Users/Zack/Git/phonopy-1.10.8/lib/python"
+	export PYTHONPATH="$HOME/Git/openncem:$HOME/Git/OtherLibs:$HOME/Git/pySTXM:$HOME/Git/ALCHEMIViewer:$HOME/Git/phonopy-1.10.8/lib/python"
 fi;
 
-export PATH="/Users/Zack/anaconda3/bin:/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:/Users/Zack/Git/OtherLibs:/Users/Zack/git/phonopy-1.10.8/scripts:/Applications/MacVim.app/Contents/bin:/Users/Zack/Git/QEDev/bin:/Users/Zack/Git/QEDev/PW/tools:/Users/Zack/Dropbox/DFT/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:$HOME/Git/OtherLibs:$HOME/git/phonopy-1.10.8/scripts:/Applications/MacVim.app/Contents/bin:$HOME/Git/QEDev/bin:$HOME/Git/QEDev/PW/tools:$HOME/Dropbox/DFT/bin:$PATH"
 
 # Ciao alias
-alias ciao="source /Users/Zack/ciao-4.11/bin/ciao.bash"
+alias ciao="source $HOME/ciao-4.11/bin/ciao.bash"
 
 # A much nicer git tree
 alias gt="git log --graph --decorate --pretty=format:'%C(yellow)%h %Cred%cr %Cblue(%an)%C(cyan)%d%Creset %s' --abbrev-commit --all"
@@ -153,14 +153,14 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/Zack/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/Zack/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/Zack/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/Zack/anaconda3/bin:$PATH"
+        export PATH="$HOME/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
