@@ -133,15 +133,27 @@ alias cadt="cat"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # Use vim-like command-line
+# Common bindings that work everywhere.
 bindkey -v
 bindkey 'kj' vi-cmd-mode
 bindkey 'jk' vi-cmd-mode
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
-bindkey "${terminfo[kdch1]}" delete-char
-# bindkey -a "^[[3~" delete-char
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
+
+# Linux only bindings.
+if [ $(uname) = Linux ]; then
+    bindkey "${terminfo[khome]}" beginning-of-line
+    bindkey "${terminfo[kend]}" end-of-line
+    bindkey "${terminfo[kdch1]}" delete-char
+fi
+
+# Mac OS bindings.
+if [ $(uname) = Darwin ]; then
+    bindkey "^[[1~" beginning-of-line
+    bindkey "^[[4~" end-of-line
+    bindkey "^[[3~" delete-char
+    bindkey -a "^[[3~" delete-char
+fi
 
 # Make less scroll
 export LESS=-r
