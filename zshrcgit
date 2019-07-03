@@ -146,7 +146,6 @@ bindkey -a "^[[3~" delete-char
 
 # Linux only bindings, and only while not in tmux
 if [ $(uname) = Linux ] && [ ! -n "$TMUX" ]; then
-    echo "adding linux keybindings"
     bindkey "${terminfo[khome]}" beginning-of-line
     bindkey "${terminfo[kend]}" end-of-line
 fi
