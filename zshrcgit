@@ -139,20 +139,16 @@ bindkey 'kj' vi-cmd-mode
 bindkey 'jk' vi-cmd-mode
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+bindkey "^[[3~" delete-char
+bindkey -a "^[[3~" delete-char
 
-# Linux only bindings.
-if [ $(uname) = Linux ]; then
+# Linux only bindings, and only while not in tmux
+if [ $(uname) = Linux ] && [ ! -n "$TMUX" ]; then
+    echo "adding linux keybindings"
     bindkey "${terminfo[khome]}" beginning-of-line
     bindkey "${terminfo[kend]}" end-of-line
-    bindkey "${terminfo[kdch1]}" delete-char
-fi
-
-# Mac OS bindings.
-if [ $(uname) = Darwin ]; then
-    bindkey "^[[1~" beginning-of-line
-    bindkey "^[[4~" end-of-line
-    bindkey "^[[3~" delete-char
-    bindkey -a "^[[3~" delete-char
 fi
 
 # Make less scroll
