@@ -136,10 +136,10 @@ alias cadt="cat"
 bindkey -v
 bindkey 'kj' vi-cmd-mode
 bindkey 'jk' vi-cmd-mode
-bindkey "^[[1~" beginning-of-line
-bindkey "^[[4~" end-of-line
-bindkey "^[[3~" delete-char
-bindkey -a "^[[3~" delete-char
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}" end-of-line
+bindkey "${terminfo[kdch1]}" delete-char
+# bindkey -a "^[[3~" delete-char
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 
