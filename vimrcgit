@@ -64,7 +64,10 @@ autocmd Filetype python nmap <leader>r <Esc>:w<CR>:!clear;python %<CR>
 autocmd Filetype python imap <leader>r <Esc>:w<CR>:!clear;python %<CR>
 
 " MacVim should use a larger font.
-set guifont=Menlo\ Regular:h16
+set guifont=Dejavu\ Sans\ Mono\ 12
+if has('macunix')
+    set guifont=Menlo\ Regular:h16
+endif
 
 " Allow for easy exit from insert mode.
 imap jk <ESC>
