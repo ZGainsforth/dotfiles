@@ -87,10 +87,8 @@ set clipboard=unnamed
 xnoremap p pgvy
 
 " Make a way to insert/delete blank lines above and below.
-nmap gK jddk
-nmap gJ kdd
-nmap gk O<esc>j
-nmap gj o<esc>j
+nmap gB O<esc>j
+nmap gb o<esc>k
 
 " Pretty colors and screen functionalities please!
 syntax on
