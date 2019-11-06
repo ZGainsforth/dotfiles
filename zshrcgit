@@ -130,7 +130,11 @@ fi
 alias cadt="cat"
 
 # Autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+if [ $(uname) = Linux ]; then
+    . /usr/share/autojump/autojump.sh
+else
+    [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+fi
 
 # Use vim-like command-line
 # Common bindings that work everywhere.
