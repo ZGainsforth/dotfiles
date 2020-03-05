@@ -81,9 +81,12 @@ cmap W w
 set mouse=a
 
 " Make system clipboard accessible
-set clipboard=unnamed
+" However, gVim has a bug and this doesn't work (can't paste in block mode).
+if !has('gui_gtk')
+    set clipboard=unnamed
+endif
 
-" Make paste not nuke the clipboard.
+" Make paste not nuke the clipboard
 xnoremap p pgvy
 
 " Make a way to insert/delete blank lines above and below.
@@ -131,3 +134,6 @@ let g:NERDTreeNodeDelimiter = "\u00a0"
 " Set path
 set path+=**
 set wildmenu
+
+" Do not give me a message about the filename when opening odd file types.
+set shortmess=aTF
