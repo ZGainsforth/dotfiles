@@ -89,7 +89,7 @@ if !has('gui_gtk')
     set clipboard=unnamed
 endif
 
-" Make paste not nuke the clipboard
+" Make paste not nuke the clipboard.
 xnoremap p pgvy
 
 " Make a way to insert/delete blank lines above and below.
