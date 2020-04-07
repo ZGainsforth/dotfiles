@@ -10,7 +10,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " Plugin 'davidhalter/jedi-vim'
 Plugin 'lervag/vimtex'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'wincent/terminus'
 Plugin 'chrisbra/csv.vim'
 Plugin 'tpope/vim-commentary'
@@ -19,6 +19,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdtree'
 Plugin 'will133/vim-dirdiff'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'zxqfl/tabnine-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
