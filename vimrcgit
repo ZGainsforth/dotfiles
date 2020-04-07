@@ -142,3 +142,10 @@ set autochdir
 
 " Do not give me a message about the filename when opening odd file types.
 set shortmess=aTF
+
+" Python settings for windows.
+if has('win64')
+    set encoding=utf-8
+    set pythondll=C:\Users\zsg\anaconda3\envs\conda27\python27.dll
+    set pythonthreedll=C:\Users\zsg\AppData\Local\Programs\Python\Python38\python38.dll
+endif
