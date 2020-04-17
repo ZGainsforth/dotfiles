@@ -20,6 +20,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'will133/vim-dirdiff'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'zxqfl/tabnine-vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -130,12 +132,19 @@ set backspace=indent,eol,start
 " Setting for MacVim mouse pad.
 nnoremap <ForceClick> i
 
-" A couple fixes for NERDTree
+" A couple tweaks for NERDTree
 " let g:NERDTreeDirArrowExpandable="+"
 " let g:NERDTreeDirArrowCollapsible="~"
 let g:NERDTreeNodeDelimiter = "\u00a0" 
+nnoremap <C-n> :NERDTreeToggle<CR>
 
-" Set path
+" git-gutter tweaks
+highlight clear SignColumn
+highlight GitGutterAdd    guifg=#00ee00 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+" set path
 set path+=**
 set wildmenu
 set autochdir
