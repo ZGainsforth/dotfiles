@@ -175,7 +175,5 @@ set linebreak
 set spelllang=en_us
 
 " Nice navigation in files with big wrapped lines (LaTeX).
-inoremap j gj
 nnoremap j gj
-inoremap k gk
 nnoremap k gk
