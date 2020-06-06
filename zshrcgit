@@ -131,6 +131,8 @@ if [ $(uname) = Linux ]; then
     alias imgcat="kitty +kitten icat "
 fi
 
+alias els="exa -lh --git"
+
 # common typos
 alias cadt="cat"
 
