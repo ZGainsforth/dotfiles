@@ -96,8 +96,13 @@ set mouse=a
 
 " Make system clipboard accessible
 " However, gVim has a bug and this doesn't work (can't paste in block mode).
-if !has('gui_gtk')
+" if !has('gui_gtk')
+"     set clipboard=unnamed
+" endif
+if has('macunix')
     set clipboard=unnamed
+else
+    set clipboard=unnamedplus
 endif
 
 " Make paste not nuke the clipboard.
