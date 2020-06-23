@@ -66,7 +66,6 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git 
-    colorize 
     colored-man-pages
 	web-search
 	history-substring-search
@@ -188,3 +187,6 @@ unset __conda_setup
 conda deactivate
 conda activate conda37
 
+# Manual plugins.
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
