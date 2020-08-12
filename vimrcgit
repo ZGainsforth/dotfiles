@@ -175,6 +175,7 @@ endif
 " Nice formatting of text
 set wrap
 set linebreak
+set display+=lastline
 
 " Spelling.  set spell to turn it on.
 set spelllang=en_us

@@ -112,7 +112,7 @@ else
 	export PYTHONPATH="$HOME/Git/OtherLibs:$HOME/Git/pySTXM:$HOME/Git/ALCHEMIViewer:$HOME/Git/phonopy-1.10.8/lib/python"
 fi;
 
-export PATH="/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:$HOME/Git/OtherLibs:$HOME/git/phonopy-1.10.8/scripts:/Applications/MacVim.app/Contents/bin:$HOME/Git/QEDev/bin:$HOME/Git/QEDev/PW/tools:$HOME/Dropbox/DFT/bin:/Users/Zack/bin:$PATH"
+export PATH="/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:$HOME/Git/OtherLibs:$HOME/git/phonopy-1.10.8/scripts:/Applications/MacVim.app/Contents/bin:$HOME/Git/QEDev/bin:$HOME/Git/QEDev/PW/tools:$HOME/Dropbox/DFT/bin:$HOME/bin:$PATH"
 
 # Ciao alias
 alias ciao="source $HOME/ciao-4.11/bin/ciao.bash"
