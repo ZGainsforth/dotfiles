@@ -187,6 +187,10 @@ unset __conda_setup
 conda deactivate
 conda activate conda37
 
+# Copy and paste through ssh.
+sshpaste() { echo "$1" | xclip -selection clipboard -i }
+sshcopy() { xclip -selection clipboard -o }
+
 # Manual plugins.
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
