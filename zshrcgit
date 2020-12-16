@@ -69,6 +69,8 @@ plugins=(
     colored-man-pages
 	web-search
 	history-substring-search
+    zsh-syntax-highlighting
+    zsh-autosuggestions
 	)
 
 source $ZSH/oh-my-zsh.sh

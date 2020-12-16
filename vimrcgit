@@ -43,6 +43,7 @@ endif
 " The underlying tex syntax engine is slow.  Turn it mostly off except for brackets.
 let g:tex_fast="m"
 let g:tex_conceal=""
+let g:tex_flavor="LATEX"
 
 " For YCM
 " Make preview windows open at bottom.
@@ -50,7 +51,7 @@ set splitbelow
 " nnoremap <Leader>d :YcmCompleter GetDoc <CR>
 nnoremap <Leader>c :pc <CR>
 nnoremap <Leader>t :YcmCompleter GetType <CR>
-nnoremap <Leader>d yiw:call GetDoc('')<Left><Left>
+nnoremap <Leader>h yiw:call GetDoc('')<Left><Left>
 function GetDoc ( DocStr )
     execute ":!pydoc " . a:DocStr . " > .getdoc.py" 
     :pedit .getdoc.py
@@ -91,6 +92,8 @@ set guitablabel=%t
 " Allow for easy exit from insert mode.
 imap jk <ESC>
 imap kj <ESC>
+imap JK <ESC>
+imap KJ <ESC>
 
 " Fix common typos I make... ;-)
 cmap Q q
@@ -112,6 +115,34 @@ endif
 
 " Make paste not nuke the clipboard.
 xnoremap p pgvy
+
+" Make d, c and x all map to the black hole register.
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
+nnoremap c "_c
+vnoremap c "_c
+nnoremap C "_C
+vnoremap C "_C
+nnoremap x "_x
+vnoremap x "_x
+nnoremap X "_X
+vnoremap X "_X
+
+" Except when I want it to populate the clipboard.
+nnoremap <leader>d d
+vnoremap <leader>d d
+nnoremap <leader>D D
+vnoremap <leader>D D
+" nnoremap <leader>c c
+" vnoremap <leader>c c
+" nnoremap <leader>C C
+" vnoremap <leader>C C
+" nnoremap <leader>x x
+" vnoremap <leader>x x
+" nnoremap <leader>X X
+" vnoremap <leader>X X
 
 " Make a way to insert/delete blank lines above and below.
 nmap gB O<esc>j
