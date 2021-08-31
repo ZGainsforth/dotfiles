@@ -224,3 +224,10 @@ nnoremap k gk
 if has("gui_running")
     set lines=50 columns=100
 endif
+
+" Buffer management
+" Allow switching between buffers without saving them.
+set hidden
+" Change the = character to a buffer switch menu.
+nnoremap = :buffers<CR>:buffer 
+
