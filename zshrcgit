@@ -114,7 +114,7 @@ else
 	export PYTHONPATH="$HOME/Git/OtherLibs:$HOME/Git/pySTXM:$HOME/Git/ALCHEMIViewer:$HOME/Git/phonopy-1.10.8/lib/python"
 fi;
 
-export PATH="/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:$HOME/Git/OtherLibs:$HOME/git/phonopy-1.10.8/scripts:/Applications/MacVim.app/Contents/bin:$HOME/Git/QEDev/bin:$HOME/Git/QEDev/PW/tools:$HOME/Dropbox/DFT/bin:$HOME/bin:$PATH"
+export PATH="$HOME/Data/DFT/bin:/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:$HOME/Git/OtherLibs:$HOME/git/phonopy-1.10.8/scripts:/Applications/MacVim.app/Contents/bin:$HOME/Git/QEDev/bin:$HOME/Git/QEDev/PW/tools:$HOME/Dropbox/DFT/bin:$HOME/bin:$PATH"
 
 # Ciao alias
 alias ciao="source $HOME/ciao-4.11/bin/ciao.bash"
@@ -194,5 +194,5 @@ sshpaste() { echo "$1" | xclip -selection clipboard -i }
 sshcopy() { xclip -selection clipboard -o }
 
 # Manual plugins.
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
