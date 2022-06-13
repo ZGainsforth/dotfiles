@@ -108,7 +108,7 @@ set mouse=a
 " if !has('gui_gtk')
 "     set clipboard=unnamed
 " endif
-if has('macunix')
+if has('macunix')|| has('win64')
     set clipboard=unnamed
 else
     set clipboard=unnamedplus
