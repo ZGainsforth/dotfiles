@@ -82,8 +82,8 @@ autocmd FileType espresso setlocal commentstring=!\ %s
 " Run python scripts with a quick \r.
 autocmd Filetype python nmap <leader>rr <Esc>:w<CR>:!clear;python %<CR>
 autocmd Filetype python imap <leader>rr <Esc>:w<CR>:!clear;python %<CR>
-autocmd Filetype python nmap <leader>rd <Esc>:w<CR>:!clear;ipdb %<CR>
-autocmd Filetype python imap <leader>rd <Esc>:w<CR>:!clear;ipdb %<CR>
+autocmd Filetype python nmap <leader>rd <Esc>:w<CR>:!clear;python -m ipdb %<CR>
+autocmd Filetype python imap <leader>rd <Esc>:w<CR>:!clear;python -m ipdb %<CR>
 
 " MacVim should use a larger font.
 set guifont=Dejavu\ Sans\ Mono\ 12
@@ -235,4 +235,7 @@ endif
 set hidden
 " Change the = character to a buffer switch menu.
 nnoremap = :buffers<CR>:buffer 
+
+" Way to remove a buffer without closing the window.
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
