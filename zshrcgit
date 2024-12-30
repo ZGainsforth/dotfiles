@@ -42,7 +42,8 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
+# CORRECT_IGNORE="[_|.]*"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -71,6 +72,7 @@ plugins=(
 	history-substring-search
     zsh-syntax-highlighting
     zsh-autosuggestions
+    autojump
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -134,8 +136,18 @@ fi
 
 alias els="exa -lh --git"
 
-# common typos
+# WSL path conversion.  Use like: wcd 'C:\STXM software'
+# alias wcd='cd "$(wslpath -u "$1")"'
+# alias wcd='cd -P'
+# alias wcd='cd "$(wslpath -u "${1// /\\ }")"'
+wcd() {
+    local wsl_path="$(wslpath -u "$1")"
+    cd "$wsl_path"
+}
+
+# common typos and autocorrect silliness
 alias cadt="cat"
+alias streamlit='nocorrect streamlit'
 
 # Autojump
 if [ $(uname) = Linux ]; then
@@ -187,7 +199,7 @@ unset __conda_setup
 
 # Enable latest conda environment
 conda deactivate
-conda activate conda37
+conda activate hyperspy310
 
 # Copy and paste through ssh.
 sshpaste() { echo "$1" | xclip -selection clipboard -i }
@@ -196,3 +208,12 @@ sshcopy() { xclip -selection clipboard -o }
 # Manual plugins.
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ORCA 6.0.0 secion
+export PATH=/home/zack/orca_6_0_0:$PATH
+
+# ORCA 6.0.0 secion
+export PATH=/home/zack/orca_6_0_0_avx2:$PATH
